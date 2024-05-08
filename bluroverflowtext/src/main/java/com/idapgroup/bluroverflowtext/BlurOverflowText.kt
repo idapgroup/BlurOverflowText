@@ -38,7 +38,7 @@ import androidx.compose.ui.unit.TextUnit
  *  1.0f - blur start from beginning of overflowed line.
  */
 @Composable
-fun BlurOverflowText(
+public fun BlurOverflowText(
     text: String,
     modifier: Modifier = Modifier,
     color: Color = Color.Unspecified,
