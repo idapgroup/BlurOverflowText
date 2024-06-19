@@ -35,7 +35,7 @@ Just provide expected blur length (default value is 0.2f which means 20% on the 
 
 ```kotlin
         BlurOverflowText(
-            text = "Some very long string that should overflow the this line.",
+            text = "Some very long string that should overflow this line.",
             modifier = Modifier.align(Alignment.Center),
             maxLines = 1,
             fontSize = 24.sp,
