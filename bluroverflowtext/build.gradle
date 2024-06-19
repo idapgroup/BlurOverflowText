@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.plugin.compose'
 }
 kotlin {
     explicitApi()
@@ -21,8 +22,9 @@ android {
         buildConfig false
         compose true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion '1.5.13'
+    composeCompiler {
+        enableStrongSkippingMode = true
+        reportsDestination = layout.buildDirectory.dir("compose_compiler")
     }
 }
 

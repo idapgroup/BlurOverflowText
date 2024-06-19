@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.plugin.compose")
 }
 
 android {
@@ -39,8 +40,9 @@ android {
     buildFeatures {
         compose = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.13"
+    composeCompiler {
+        enableStrongSkippingMode = true
+        reportsDestination = layout.buildDirectory.dir("compose_compiler")
     }
     packaging {
         resources {
@@ -51,9 +53,9 @@ android {
 
 dependencies {
 //    implementation(project(":bluroverflowtext"))
-    implementation("com.github.idapgroup:BlurOverflowText:0.1.2")
+    implementation("com.github.idapgroup:BlurOverflowText:0.1.3")
     implementation("androidx.core:core-ktx:1.13.1")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.1")
     implementation("androidx.activity:activity-compose:1.9.0")
     implementation(platform("androidx.compose:compose-bom:2024.05.00"))
     implementation("androidx.compose.ui:ui")
